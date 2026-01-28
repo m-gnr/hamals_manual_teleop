@@ -1,13 +1,8 @@
-```markdown
 # hamals_manual_teleop
 
 **hamals_manual_teleop**, ROS 2 için geliştirilmiş, klavye tabanlı ve**latched**
 (tek tuş = sürekli hareket) mantığıyla çalışan bir teleop paketidir.
 Paket,**cmd_vel** standardına uygun `geometry_msgs/Twist` mesajları yayınlar.
-
----
-
-## Paket Yapısı
 
 ```text
 hamals_manual_teleop/
@@ -22,8 +17,6 @@ hamals_manual_teleop/
 └── README.md
 
 ```
-
----
 
 ## Kontrol Şeması
 
