@@ -14,14 +14,14 @@ class TeleopNode(Node):
         self.declare_parameter('publish_rate_hz', 20.0)
         self.declare_parameter('cmd_vel_topic', '/cmd_vel')
 
-        self.declare_parameter('linear_speed', 0.5)
-        self.declare_parameter('linear_min', 0.1)
-        self.declare_parameter('linear_max', 1.0)
-        self.declare_parameter('linear_step', 0.1)
+        self.declare_parameter('linear_speed', 0.1)
+        self.declare_parameter('linear_min', 0.0)
+        self.declare_parameter('linear_max', 0.3)
+        self.declare_parameter('linear_step', 0.05)
 
         self.declare_parameter('angular_speed', 0.5)
-        self.declare_parameter('angular_min', 0.1)
-        self.declare_parameter('angular_max', 1.0)
+        self.declare_parameter('angular_min', 0.0)
+        self.declare_parameter('angular_max', 1.5)
         self.declare_parameter('angular_step', 0.1)
 
         self.declare_parameter('key_forward', 'w')
@@ -119,6 +119,10 @@ Speed adjust:
 
         msg = Twist()
         msg.linear.x = self.current_linear_cmd
+        msg.linear.y = 0.0
+        msg.linear.z = 0.0
+        msg.angular.x = 0.0
+        msg.angular.y = 0.0
         msg.angular.z = self.current_angular_cmd
         self.pub.publish(msg)
 
